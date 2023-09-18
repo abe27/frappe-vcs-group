@@ -6,4 +6,4 @@ from frappe.model.document import Document
 
 
 class SupplierManangement(Document):
-	pass
+    pass
