@@ -1,3 +1,4 @@
+import time
 import pyodbc
 import requests
 import json
@@ -25,7 +26,7 @@ if session.status_code == 200:
         connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password};TrustServerCertificate=yes;'
         # Establish a connection
         conn = pyodbc.connect(connection_string)
-        SQL_QUERY = f"""select FCSKID,FCCODE,FCNAME from COOR c order by c.FCCODE"""
+        SQL_QUERY = f"""select FCSKID,FCCODE,FCNAME from COOR c order by c.FCCODE,c.FCNAME"""
         cursor = conn.cursor()
         cursor.execute(SQL_QUERY)
 
@@ -44,8 +45,12 @@ if session.status_code == 200:
             headers = {'Content-Type': 'application/json',}
             response = requests.request("POST", f"{url}/resource/Supplier Manangement", headers=headers, data=payload, cookies=session.cookies)
 
+            if response.status_code != 200:
+                print(f"{i}.Sync Status Code:{response.status_code} DataID: {FCSKID}")
+
             print(f"{i}.Sync Status Code:{response.status_code} DataID: {FCSKID}")
             i += 1
+            time.sleep(0.3)
 
         cursor.close()
         conn.close()
