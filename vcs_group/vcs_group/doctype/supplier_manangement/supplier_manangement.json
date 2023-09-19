@@ -20,7 +20,12 @@
   "section_break_ccjn",
   "is_active",
   "column_break_nicj",
-  "image"
+  "image",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_supplier_manangement"
  ],
  "fields": [
   {
@@ -100,15 +105,51 @@
   {
    "fieldname": "column_break_llyg",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Supplier Manangement"
+  },
+  {
+   "fieldname": "parent_supplier_manangement",
+   "fieldtype": "Link",
+   "label": "Parent Supplier Manangement",
+   "options": "Supplier Manangement"
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
+ "is_tree": 1,
  "links": [],
- "modified": "2023-09-19 09:03:43.123316",
+ "modified": "2023-09-19 10:39:05.278324",
  "modified_by": "Administrator",
  "module": "Vcs Group",
  "name": "Supplier Manangement",
+ "nsm_parent_field": "parent_supplier_manangement",
  "owner": "Administrator",
  "permissions": [
   {
