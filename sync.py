@@ -8,7 +8,7 @@ database = 'Formula'
 username = 'fm1234'
 password = 'x2y2'
 
-url = "http://localhost:8001/api"
+url = "http://localhost:8000/api"
 payload = json.dumps({
     "usr": "Administrator",
     "pwd": "admin@vcs"
