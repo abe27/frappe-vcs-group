@@ -46,7 +46,7 @@ if session.status_code == 200:
             response = requests.request("POST", f"{url}/resource/Supplier Manangement", headers=headers, data=payload, cookies=session.cookies)
 
             if response.status_code != 200:
-                print(f"{i}.Sync Status Code:{response.status_code} DataID: {FCSKID}")
+                print(f"--> {i}.Sync Status Code:{response.status_code} DataID: {FCSKID}")
 
             print(f"{i}.Sync Status Code:{response.status_code} DataID: {FCSKID}")
             i += 1
