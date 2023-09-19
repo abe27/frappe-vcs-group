@@ -99,8 +99,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "User",
-   "options": "User",
-   "unique": 1
+   "options": "User"
   },
   {
    "fieldname": "column_break_llyg",
@@ -123,6 +122,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "is_group",
    "fieldtype": "Check",
    "label": "Is Group"
@@ -144,7 +144,7 @@
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2023-09-19 11:53:07.054826",
+ "modified": "2023-09-19 13:24:33.044372",
  "modified_by": "Administrator",
  "module": "Vcs Group",
  "name": "Supplier Manangement",
