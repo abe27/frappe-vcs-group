@@ -50,7 +50,7 @@ if session.status_code == 200:
 
             print(f"{i}.Sync Status Code:{response.status_code} DataID: {FCSKID}")
             i += 1
-            time.sleep(0.3)
+            time.sleep(0.1)
 
         cursor.close()
         conn.close()
