@@ -31,9 +31,9 @@ cursor = conn.cursor()
 cursor.execute(SQL_QUERY)
 
 for r in cursor.fetchall():
-    FCSKID = str(f"{r['FCSKID']}").strip()
-    FCCODE = str(f"{r['FCCODE']}").strip()
-    FCNAME = str(f"{r['FCNAME']}").strip()
+    FCSKID = str(f"{r[0]}").strip()
+    FCCODE = str(f"{r[1]}").strip()
+    FCNAME = str(f"{r[2]}").strip()
 
     print(f"FCSKID:{FCSKID} FCCODE:{FCCODE} FCNAME: {FCNAME}")
     payload = json.dumps({
