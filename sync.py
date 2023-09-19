@@ -30,6 +30,7 @@ SQL_QUERY = f"""select FCSKID,FCCODE,FCNAME from COOR c order by c.FCCODE"""
 cursor = conn.cursor()
 cursor.execute(SQL_QUERY)
 
+i = 1
 for r in cursor.fetchall():
     FCSKID = str(f"{r[0]}").strip()
     FCCODE = str(f"{r[1]}").strip()
@@ -44,7 +45,8 @@ for r in cursor.fetchall():
     headers = {'Content-Type': 'application/json',}
     response = requests.request("POST", f"{url}/resource/Supplier Manangement", headers=headers, data=payload, cookies=session.cookies)
 
-    print(response.json())
+    print(f"{i}.Sync Status Code:{response.status_code}")
+    i += 1
 
 cursor.close()
 conn.close()
